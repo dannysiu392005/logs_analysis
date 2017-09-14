@@ -48,7 +48,7 @@ substring of the path for comparison (`substring(path, 10)`)
 3. SQL for doys which have > 1% of requests lead to errors
 One more layer of select is required because error_per cannot be referenced
 inside the subquery as where happens select
-    ```sql
+    ``` sql
     select time::date, round(error_per::decimal, 1) from
     (
         select error_count.time, (error_count.num::float / total_count.num *
