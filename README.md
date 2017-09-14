@@ -51,8 +51,7 @@ inside the subquery as where happens select
     ``` sql
     select time::date, round(error_per::decimal, 1) from
     (
-        select error_count.time, (error_count.num::float / total_count.num *
-100) as error_per -- # NOQA
+        select error_count.time, (error_count.num::float / total_count.num * 100) as error_per
         from (
             select date_trunc('day', time) as time, count(*) as num
             from log
